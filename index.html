@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tandem Talks — A Ride. A Conversation.</title>
+  <meta name="description" content="Let's have a conversation, on a tandem bike. Oh.. and I'll get you where you need to be." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <img src="assets/logo.png" alt="Tandem Talks" class="nav__logo-mark" />
+      </a>
+      <ul class="nav__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="who-is-driving.html">Who's Driving</a></li>
+        <li><a href="transport-chat.html">Book a Ride</a></li>
+        <li><a href="safety.html">Safety Info</a></li>
+      </ul>
+      <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__inner">
+      <div class="hero__content">
+        <h1 class="hero__title">
+          Let's have a conversation,<br>
+          on a tandem bike.<br>
+          <span>Oh.. and I'll get you<br>where you need to be.</span>
+        </h1>
+        <div class="hero__actions" style="margin-top: 2.5rem;">
+          <a href="transport-chat.html" class="btn btn--teal btn--with-icon">
+            <img src="assets/bike.png" alt="" class="btn__icon btn__icon--bike" />
+            Book a Ride
+          </a>
+          <a href="safety.html" class="btn btn--outline btn--with-icon">
+            <img src="assets/helmet-1.png" alt="" class="btn__icon" />
+            Safety Info
+          </a>
+        </div>
+      </div>
+      <div class="hero__visual">
+        <div class="bike-annotation">
+          <img src="assets/bike.png" alt="Robin, the Tandem Talks tandem bike" class="hero__bike" />
+          <div class="robin-label">
+            <span class="robin-label__text">Robin, our<br>method of<br>transportation</span>
+            <svg width="60" height="48" viewBox="0 0 60 48" fill="none" aria-hidden="true">
+              <path d="M 4 44 C 12 28 36 14 56 4" stroke="#faa5f2" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M 56 4 L 46 9" stroke="#faa5f2" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M 56 4 L 52 15" stroke="#faa5f2" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div>
+          <div class="footer__brand-name">Tandem Talks &copy;</div>
+          <p class="footer__tagline">A ride along podcast. I take you from Point A to Point B on a tandem bike and on the way, we have a real conversation.</p>
+          <div class="footer__social">
+            <a href="https://instagram.com/tandem_talks" target="_blank" rel="noopener">
+              @tandem_talks on Instagram
+            </a>
+          </div>
+          <div class="footer__contact">
+            <a href="mailto:politijudy@gmail.com">Contact</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer__col-title">Navigate</div>
+          <ul class="footer__links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="who-is-driving.html">Who's Driving</a></li>
+            <li><a href="transport-chat.html">Book a Ride</a></li>
+            <li><a href="safety.html">Safety Info</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        &copy; <span id="year"></span> Tandem Talks. A passion project, not a company.
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING CTA -->
+  <a href="transport-chat.html" class="float-cta" aria-label="Book a Ride">
+    <span class="float-cta__text">Book a Ride</span>
+    <img src="assets/bike.png" alt="" class="float-cta__bike" />
+  </a>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="js/main.js"></script>
+</body>
+</html>

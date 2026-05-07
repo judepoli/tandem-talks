@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Who's Driving — Tandem Talks</title>
+  <meta name="description" content="Meet Judith, the person behind the handlebars. And Robin, the tandem bike making it all happen." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <style>
+    .wid-hero {
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      background: var(--color-primary);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .wid-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 55% 65% at 75% 50%, rgba(179,249,242,0.09) 0%, transparent 65%),
+        radial-gradient(ellipse 35% 40% at 10% 80%, rgba(173,55,52,0.13) 0%, transparent 60%);
+    }
+
+    .wid-hero__inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 5rem 1.5rem;
+    }
+
+    .wid-hero__eyebrow {
+      display: inline-block;
+      background: var(--color-highlight);
+      color: var(--color-primary);
+      padding: 0.3rem 1rem;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+    }
+
+    .wid-hero__title {
+      font-family: var(--font-heading);
+      font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+      color: var(--color-white);
+      line-height: 1.1;
+      margin-bottom: 1.25rem;
+    }
+
+    .wid-hero__title span { color: var(--color-highlight); }
+
+    .wid-hero__sub {
+      color: rgba(255,255,255,0.72);
+      font-size: 1.1rem;
+      line-height: 1.75;
+    }
+
+    /* Photo: circular crop with layered ring treatment */
+    .wid-hero__photo-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    /* Decorative teal ring sitting behind the photo */
+    .wid-hero__photo-wrap::before {
+      content: '';
+      position: absolute;
+      width: 340px;
+      height: 340px;
+      border-radius: 50%;
+      border: 3px solid var(--color-highlight);
+      opacity: 0.5;
+      transform: translate(10px, 10px);
+    }
+
+    .wid-hero__photo {
+      width: 320px;
+      height: 320px;
+      object-fit: cover;
+      object-position: center center;
+      border-radius: 50%;
+      border: 4px solid var(--color-highlight);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+      position: relative;
+      z-index: 1;
+      display: block;
+    }
+
+    /* Story section */
+    .story-section {
+      padding: 4.5rem 0;
+    }
+
+    .story-inner {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      text-align: center;
+    }
+
+    .story-inner p {
+      font-size: 1.08rem;
+      line-height: 1.88;
+      color: var(--color-text-light);
+    }
+
+    .story-inner strong {
+      color: var(--color-primary);
+      font-weight: 700;
+    }
+
+    /* Philosophy section */
+    .philosophy {
+      background: var(--color-highlight);
+      padding: 5rem 0;
+    }
+
+    .philosophy__inner {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      text-align: center;
+    }
+
+    .philosophy__label {
+      display: inline-block;
+      color: var(--color-accent);
+      font-weight: 700;
+      font-size: 0.78rem;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .philosophy__heading {
+      font-family: var(--font-heading);
+      font-size: clamp(1.7rem, 3.5vw, 2.5rem);
+      color: var(--color-primary);
+      margin-bottom: 1.75rem;
+      line-height: 1.2;
+    }
+
+    .philosophy__body {
+      font-size: 1.05rem;
+      line-height: 1.85;
+      color: var(--color-text);
+      margin-bottom: 1.5rem;
+    }
+
+    .philosophy__pull {
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      color: var(--color-primary);
+      font-style: italic;
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 2px solid rgba(132,20,98,0.15);
+    }
+
+    @media (max-width: 768px) {
+      .wid-hero__inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 3.5rem 1.5rem;
+        gap: 2.5rem;
+      }
+
+      .wid-hero__photo-wrap::before {
+        width: 260px;
+        height: 260px;
+      }
+
+      .wid-hero__photo {
+        width: 240px;
+        height: 240px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <img src="assets/logo.png" alt="Tandem Talks" class="nav__logo-mark" />
+      </a>
+      <ul class="nav__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="who-is-driving.html">Who's Driving</a></li>
+        <li><a href="transport-chat.html">Book a Ride</a></li>
+        <li><a href="safety.html">Safety Info</a></li>
+      </ul>
+      <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="wid-hero">
+    <div class="wid-hero__inner">
+      <div>
+        <div class="wid-hero__eyebrow">Who's Driving?</div>
+        <h1 class="wid-hero__title">
+          Hi, I'm <span>Judith.</span>
+        </h1>
+        <p class="wid-hero__sub">
+          An enthusiastic chatter. An avid cyclist. And the person who will pedal you from point A to point B while we have a conversation worth remembering.
+        </p>
+      </div>
+      <div class="wid-hero__photo-wrap">
+        <!-- Replace assets/judith.jpg at any time with an updated photo -->
+        <img
+          src="assets/judith.jpg"
+          alt="Judith, the host of Tandem Talks"
+          class="wid-hero__photo"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- STORY -->
+  <section class="story-section">
+    <div class="story-inner">
+      <p>
+        <strong>Robin</strong>, my tandem bike, came into my life in the spring of 2026. From the first ride, it was clear this wasn't just a bike. A tandem asks something of the person on the back — it asks them to trust, to let go, and to just be there. That kind of presence, I quickly realised, is exactly where the best conversations live.
+      </p>
+    </div>
+  </section>
+
+  <!-- WHY TANDEM -->
+  <section class="philosophy">
+    <div class="philosophy__inner">
+      <div class="philosophy__label">Why a tandem?</div>
+      <h2 class="philosophy__heading">There are conversations on the subway.<br>There are conversations on a walk.<br>But a tandem is something else.</h2>
+      <p class="philosophy__body">
+        On public transport, your eyes wander. On a walk, you look ahead. But on a tandem bike, you are completely, unavoidably present with another person. You're moving together, breathing together, working toward the same destination at the same pace.
+      </p>
+      <p class="philosophy__body">
+        There is no checking your phone. There is no looking away. There is only the road, the rhythm, and whatever comes up. And what comes up, in my experience, is almost always something worth saying.
+      </p>
+      <p class="philosophy__pull">
+        Symbiosis in body and mind. Elevated conversation.
+      </p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div>
+          <div class="footer__brand-name">Tandem Talks &copy;</div>
+          <p class="footer__tagline">A ride along podcast. I take you from Point A to Point B on a tandem bike and on the way, we have a real conversation.</p>
+          <div class="footer__social">
+            <a href="https://instagram.com/tandem_talks" target="_blank" rel="noopener">
+              @tandem_talks on Instagram
+            </a>
+          </div>
+          <div class="footer__contact">
+            <a href="mailto:politijudy@gmail.com">Contact</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer__col-title">Navigate</div>
+          <ul class="footer__links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="who-is-driving.html">Who's Driving</a></li>
+            <li><a href="transport-chat.html">Book a Ride</a></li>
+            <li><a href="safety.html">Safety Info</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        &copy; <span id="year"></span> Tandem Talks. A passion project, not a company.
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING CTA -->
+  <a href="transport-chat.html" class="float-cta" aria-label="Book a Ride">
+    <span class="float-cta__text">Book a Ride</span>
+    <img src="assets/bike.png" alt="" class="float-cta__bike" />
+  </a>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="js/main.js"></script>
+</body>
+</html>

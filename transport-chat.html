@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book a Ride — Tandem Talks</title>
+  <meta name="description" content="Getting you from point A to point B on a tandem bike, with an incredible chat on the route." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <img src="assets/logo.png" alt="Tandem Talks" class="nav__logo-mark" />
+      </a>
+      <ul class="nav__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="who-is-driving.html">Who's Driving</a></li>
+        <li><a href="transport-chat.html">Book a Ride</a></li>
+        <li><a href="safety.html">Safety Info</a></li>
+      </ul>
+      <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container page-hero__inner">
+      <div class="page-hero__label">Book a Ride</div>
+      <h1 class="page-hero__title">Transport &amp; Chat</h1>
+      <p class="page-hero__sub">
+        Getting you from point A to point B on a tandem bike, with an incredible chat on the route.
+      </p>
+    </div>
+  </section>
+
+  <!-- BOOKING FORM -->
+  <section class="section">
+    <div class="container">
+
+      <div class="form-section">
+
+        <!-- SUCCESS STATE -->
+        <div class="form-success" id="form-success">
+          <h3 class="form-success__title">You're booked in!</h3>
+          <p class="form-success__text">See you out there.</p>
+        </div>
+
+        <form
+          id="booking-form"
+          name="tandem-talks-booking"
+          method="POST"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+        >
+          <input type="hidden" name="form-name" value="tandem-talks-booking" />
+          <p style="display:none;"><label>Don't fill this out: <input name="bot-field" /></label></p>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="first-name">First Name <span class="req">*</span></label>
+              <input type="text" id="first-name" name="first_name" required placeholder="Jane" autocomplete="given-name" />
+            </div>
+            <div class="form-group">
+              <label for="last-name">Last Name <span class="req">*</span></label>
+              <input type="text" id="last-name" name="last_name" required placeholder="Smith" autocomplete="family-name" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="contact">Email or Phone Number <span class="req">*</span></label>
+            <input type="text" id="contact" name="contact" required placeholder="jane@example.com or +1 555 000 0000" autocomplete="email" />
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="ride-date">Date of Transport &amp; Chat <span class="req">*</span></label>
+              <input type="date" id="ride-date" name="ride_date" required />
+            </div>
+            <div class="form-group">
+              <label for="ride-time">Time of Pickup <span class="req">*</span></label>
+              <input type="time" id="ride-time" name="ride_time" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="location-a">Location A: Starting point <span class="req">*</span></label>
+            <input type="text" id="location-a" name="location_a" required placeholder="Address" autocomplete="street-address" />
+          </div>
+
+          <div class="form-group">
+            <label for="location-b">Location B: Final destination <span class="req">*</span></label>
+            <input type="text" id="location-b" name="location_b" required placeholder="Address" autocomplete="street-address" />
+          </div>
+
+          <div class="form-group">
+            <label for="topics">
+              Topic(s) of Interest
+              <span style="font-weight: 400; color: var(--color-text-light);">(optional)</span>
+            </label>
+            <textarea id="topics" name="topics" rows="3" placeholder="Is there something on your mind? A project, a question, a story you keep coming back to?"></textarea>
+          </div>
+
+          <div class="form-check">
+            <input type="checkbox" id="consent-helmet" name="consent_helmet" value="yes" required />
+            <label for="consent-helmet">
+              I will wear the helmet provided and adhere to the
+              <a href="safety.html">safety policy</a>. <span class="req">*</span>
+            </label>
+          </div>
+          <p class="helmet-note">*My brain matters, not how I am perceived.</p>
+
+          <div class="form-submit">
+            <button type="submit" class="btn btn--primary" style="font-size: 1rem; padding: 0.95rem 2.5rem;">
+              Book My Ride
+            </button>
+          </div>
+
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div>
+          <div class="footer__brand-name">Tandem Talks &copy;</div>
+          <p class="footer__tagline">A ride along podcast. I take you from Point A to Point B on a tandem bike and on the way, we have a real conversation.</p>
+          <div class="footer__social">
+            <a href="https://instagram.com/tandem_talks" target="_blank" rel="noopener">
+              @tandem_talks on Instagram
+            </a>
+          </div>
+          <div class="footer__contact">
+            <a href="mailto:politijudy@gmail.com">Contact</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer__col-title">Navigate</div>
+          <ul class="footer__links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="who-is-driving.html">Who's Driving</a></li>
+            <li><a href="transport-chat.html">Book a Ride</a></li>
+            <li><a href="safety.html">Safety Info</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        &copy; <span id="year"></span> Tandem Talks. A passion project, not a company.
+      </div>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="js/main.js"></script>
+</body>
+</html>
