@@ -53,7 +53,12 @@ if (bookingForm) {
     let h = parseInt(hour.value);
     if (ampm.value === 'PM' && h !== 12) h += 12;
     if (ampm.value === 'AM' && h === 12) h = 0;
-    rideTime.value = `${h.toString().padStart(2, '0')}:${minute.value}`;
+    const hStr = h.toString().padStart(2, '0');
+    const dateVal = document.getElementById('ride-date').value;
+    rideTime.value = `${hStr}:${minute.value}`;
+    document.getElementById('ride-start-datetime').value = `${dateVal} ${hStr}:${minute.value}`;
+    const endH = ((h + 1) % 24).toString().padStart(2, '0');
+    document.getElementById('ride-end-datetime').value = `${dateVal} ${endH}:${minute.value}`;
 
     const submitBtn = bookingForm.querySelector('[type="submit"]');
     submitBtn.textContent = 'Sending…';
