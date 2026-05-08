@@ -8,7 +8,6 @@ if (toggle && navLinks) {
     toggle.setAttribute('aria-expanded', navLinks.classList.contains('open'));
   });
 
-  // Close on link click (mobile)
   navLinks.querySelectorAll('a').forEach(a => {
     a.addEventListener('click', () => navLinks.classList.remove('open'));
   });
@@ -30,6 +29,19 @@ const formSuccess = document.getElementById('form-success');
 if (bookingForm) {
   bookingForm.addEventListener('submit', async (e) => {
     e.preventDefault();
+
+    // Validate contact: must be a valid email or phone number
+    const contactInput = document.getElementById('contact');
+    const contactValue = contactInput.value.trim();
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const phoneRegex = /^\+?[\d\s\-(). ]{7,20}$/;
+    if (!emailRegex.test(contactValue) && !phoneRegex.test(contactValue)) {
+      contactInput.setCustomValidity('Please enter a valid email address or phone number.');
+      contactInput.reportValidity();
+      return;
+    }
+    contactInput.setCustomValidity('');
+
     const submitBtn = bookingForm.querySelector('[type="submit"]');
     submitBtn.textContent = 'Sending…';
     submitBtn.disabled = true;
@@ -51,7 +63,7 @@ if (bookingForm) {
     } catch {
       submitBtn.textContent = 'Book My Ride';
       submitBtn.disabled = false;
-      alert('Something went wrong. Please try again or DM us on Instagram.');
+      alert('Something went wrong. Please try again or DM @tandem_talks on Instagram.');
     }
   });
 }
