@@ -25,9 +25,9 @@ document.querySelectorAll('.nav__links a').forEach(link => {
 // Date field: minimum is tomorrow
 const rideDateInput = document.getElementById('ride-date');
 if (rideDateInput) {
-  const tomorrow = new Date();
-  tomorrow.setDate(tomorrow.getDate() + 1);
-  rideDateInput.min = tomorrow.toISOString().split('T')[0];
+  const earliest = new Date();
+  earliest.setDate(earliest.getDate() + 14);
+  rideDateInput.min = earliest.toISOString().split('T')[0];
 }
 
 // Netlify form: show success state without page reload
