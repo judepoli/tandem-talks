@@ -50,7 +50,10 @@ if (bookingForm) {
       hour.scrollIntoView({ behavior: 'smooth', block: 'center' });
       return;
     }
-    rideTime.value = `${hour.value}:${minute.value} ${ampm.value}`;
+    let h = parseInt(hour.value);
+    if (ampm.value === 'PM' && h !== 12) h += 12;
+    if (ampm.value === 'AM' && h === 12) h = 0;
+    rideTime.value = `${h.toString().padStart(2, '0')}:${minute.value}`;
 
     const submitBtn = bookingForm.querySelector('[type="submit"]');
     submitBtn.textContent = 'Sending…';
