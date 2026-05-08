@@ -11,7 +11,23 @@
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="css/styles.css" />
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyATVD1LtrtQqBigFKCOvrgkebv6oJ1oy8Q&libraries=places&callback=initAddressAutocomplete" async defer></script>
+  <script>
+    function initAddressAutocomplete() {
+      const nycBounds = { north: 40.9176, south: 40.4774, east: -73.7004, west: -74.2591 };
+      const opts = {
+        bounds: nycBounds,
+        componentRestrictions: { country: 'us' },
+        fields: ['formatted_address'],
+        types: ['address'],
+        strictBounds: false
+      };
+      const inputA = document.getElementById('location-a');
+      const inputB = document.getElementById('location-b');
+      if (inputA) new google.maps.places.Autocomplete(inputA, opts);
+      if (inputB) new google.maps.places.Autocomplete(inputB, opts);
+    }
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyATVD1LtrtQqBigFKCOvrgkebv6oJ1oy8Q&libraries=places&callback=initAddressAutocomplete" defer></script>
 </head>
 <body>
 
@@ -96,12 +112,12 @@
 
           <div class="form-group">
             <label for="location-a">Location A: Starting point <span class="req">*</span></label>
-            <input type="text" id="location-a" name="location_a" required placeholder="Address" autocomplete="street-address" />
+            <input type="text" id="location-a" name="location_a" required placeholder="Address" autocomplete="off" />
           </div>
 
           <div class="form-group">
             <label for="location-b">Location B: Final destination <span class="req">*</span></label>
-            <input type="text" id="location-b" name="location_b" required placeholder="Address" autocomplete="street-address" />
+            <input type="text" id="location-b" name="location_b" required placeholder="Address" autocomplete="off" />
           </div>
 
           <div class="form-group">
@@ -166,22 +182,6 @@
   </footer>
 
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
-  <script>
-    function initAddressAutocomplete() {
-      const nycBounds = { north: 40.9176, south: 40.4774, east: -73.7004, west: -74.2591 };
-      const opts = {
-        bounds: nycBounds,
-        componentRestrictions: { country: 'us' },
-        fields: ['formatted_address'],
-        types: ['address'],
-        strictBounds: false
-      };
-      const inputA = document.getElementById('location-a');
-      const inputB = document.getElementById('location-b');
-      if (inputA) new google.maps.places.Autocomplete(inputA, opts);
-      if (inputB) new google.maps.places.Autocomplete(inputB, opts);
-    }
-  </script>
   <script src="js/main.js"></script>
 </body>
 </html>
