@@ -22,7 +22,7 @@ document.querySelectorAll('.nav__links a').forEach(link => {
   }
 });
 
-// Netlify form: show success state without page reload
+// Interest form: post to /api/contact, show success without page reload
 const bookingForm = document.getElementById('booking-form');
 const formSuccess = document.getElementById('form-success');
 
@@ -35,11 +35,11 @@ if (bookingForm) {
     submitBtn.disabled = true;
 
     try {
-      const data = new FormData(bookingForm);
-      const response = await fetch(window.location.pathname, {
+      const data = Object.fromEntries(new FormData(bookingForm));
+      const response = await fetch('/api/contact', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(data).toString(),
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
       });
 
       if (response.ok) {
