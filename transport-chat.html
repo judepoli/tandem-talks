@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Book your Tandem Talk — Tandem Talks</title>
+  <title>Interested? — Tandem Talks</title>
   <meta name="description" content="Getting you from point A to point B on a tandem bike, with an incredible chat on the route." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -11,22 +11,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="css/styles.css" />
-  <script>
-    function initAddressAutocomplete() {
-      const nycBounds = { north: 40.9176, south: 40.4774, east: -73.7004, west: -74.2591 };
-      const opts = {
-        bounds: nycBounds,
-        componentRestrictions: { country: 'us' },
-        fields: ['formatted_address', 'name'],
-        strictBounds: false
-      };
-      const inputA = document.getElementById('location-a');
-      const inputB = document.getElementById('location-b');
-      if (inputA) new google.maps.places.Autocomplete(inputA, opts);
-      if (inputB) new google.maps.places.Autocomplete(inputB, opts);
-    }
-  </script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyATVD1LtrtQqBigFKCOvrgkebv6oJ1oy8Q&libraries=places&callback=initAddressAutocomplete" defer></script>
 </head>
 <body>
 
@@ -39,7 +23,7 @@
       <ul class="nav__links">
         <li><a href="index.html">Home</a></li>
         <li><a href="who-is-driving.html">Who's Driving</a></li>
-        <li><a href="transport-chat.html">Book your Tandem Talk</a></li>
+        <li><a href="transport-chat.html">Interested?</a></li>
         <li><a href="safety.html">Safety Info</a></li>
       </ul>
       <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
@@ -51,7 +35,7 @@
   <!-- PAGE HERO -->
   <section class="page-hero">
     <div class="container page-hero__inner">
-      <div class="page-hero__label">Book your Tandem Talk</div>
+      <div class="page-hero__label">Interested?</div>
       <h1 class="page-hero__title">Transport &amp; Chat</h1>
       <p class="page-hero__sub">
         Getting you from point A to point B on a tandem bike, with an incredible chat on the route.
@@ -68,8 +52,7 @@
 
         <!-- SUCCESS STATE -->
         <div class="form-success" id="form-success">
-          <h3 class="form-success__title">Request received!</h3>
-          <p class="form-success__text">Your Tandem Talk is confirmed once a calendar invite lands in your inbox. That is your green light.</p>
+          <h3 class="form-success__title">Thank you for expressing your interest in a Tandem Talk</h3>
         </div>
 
         <form
@@ -100,45 +83,6 @@
           </div>
 
           <div class="form-group">
-            <label for="ride-date">Date of Tandem Talk <span class="req">*</span></label>
-            <input type="date" id="ride-date" name="ride_date" required />
-          </div>
-
-          <div class="form-group">
-            <label for="location-a">Location A: Starting point <span class="req">*</span></label>
-            <input type="text" id="location-a" name="location_a" required placeholder="Address" autocomplete="off" />
-          </div>
-
-          <div class="form-group">
-            <label>Time of Pickup <span class="req">*</span></label>
-            <div class="time-picker">
-              <select id="time-hour">
-                <option value="" disabled selected>Hour</option>
-                <option>1</option><option>2</option><option>3</option><option>4</option>
-                <option>5</option><option>6</option><option>7</option><option>8</option>
-                <option>9</option><option>10</option><option>11</option><option>12</option>
-              </select>
-              <select id="time-minute">
-                <option value="" disabled selected>Min</option>
-                <option value="00">00</option><option value="15">15</option>
-                <option value="30">30</option><option value="45">45</option>
-              </select>
-              <select id="time-ampm">
-                <option value="" disabled selected>AM / PM</option>
-                <option>AM</option><option>PM</option>
-              </select>
-            </div>
-            <input type="hidden" id="ride-time" name="ride_time" />
-            <input type="hidden" id="ride-start-datetime" name="ride_start_datetime" />
-            <input type="hidden" id="ride-end-datetime" name="ride_end_datetime" />
-          </div>
-
-          <div class="form-group">
-            <label for="location-b">Location B: Final destination <span class="req">*</span></label>
-            <input type="text" id="location-b" name="location_b" required placeholder="Address" autocomplete="off" />
-          </div>
-
-          <div class="form-group">
             <label for="topics">
               Topic(s) of Interest
               <span style="font-weight: 400; color: var(--color-text-light);">(optional)</span>
@@ -149,15 +93,14 @@
           <div class="form-check">
             <input type="checkbox" id="consent-helmet" name="consent_helmet" value="yes" required />
             <label for="consent-helmet">
-              I will wear the helmet provided and adhere to the
+              I have read and accept the
               <a href="safety.html">safety policy</a>. <span class="req">*</span>
             </label>
           </div>
-          <p class="helmet-note">*My brain matters, not how I am perceived.</p>
 
           <div class="form-submit">
             <button type="submit" class="btn btn--primary" style="font-size: 1rem; padding: 0.95rem 2.5rem;">
-              Book My Ride
+              I'm Interested
             </button>
           </div>
 
@@ -188,7 +131,7 @@
           <ul class="footer__links">
             <li><a href="index.html">Home</a></li>
             <li><a href="who-is-driving.html">Who's Driving</a></li>
-            <li><a href="transport-chat.html">Book your Tandem Talk</a></li>
+            <li><a href="transport-chat.html">Interested?</a></li>
             <li><a href="safety.html">Safety Info</a></li>
           </ul>
         </div>
