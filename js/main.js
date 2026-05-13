@@ -35,11 +35,11 @@ if (bookingForm) {
     submitBtn.disabled = true;
 
     try {
-      const data = Object.fromEntries(new FormData(bookingForm));
+      const data = new FormData(bookingForm);
       const response = await fetch('https://hooks.zapier.com/hooks/catch/27524470/4yekwg2/', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
+        body: new URLSearchParams(data).toString(),
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       });
 
       if (response.ok) {
